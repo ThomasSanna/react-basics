@@ -1,0 +1,298 @@
+$hovercolor:#cacaca;
+
+.container *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headall {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    height: 10vh;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    resize: both;
+}
+
+.navlink {
+    text-decoration: none;
+}
+
+li, p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: black;
+    height: 8vh;
+    min-height: 65px;
+    min-width: 8vw;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    &:hover{
+        background-color: $hovercolor;
+    }
+}
+
+.gauche{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    min-width: 350px;
+    padding: 0;
+    margin: 0;
+    margin-left: 2rem;
+    height: 5rem;
+}
+
+.droite{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    margin-right: 2rem;
+    height: 5rem;
+
+    .pdp{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-width: 14vw;
+        border-radius: 10px;
+        &:hover{
+            cursor: pointer;
+            opacity: 0.6;
+            .rond{
+                opacity: 0.8;
+            }
+        }
+        .rond{
+            background: url("../../../imgft/pika.jpg") no-repeat center;
+            background-position: 70% 100%;
+            background-size: 180%;
+            position: relative;
+            border-radius: 50%;
+            min-width: 50px;
+            min-height: 50px;
+        }
+    }
+    
+}
+
+.horizontalline{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100rem;
+    height: 0.1rem;
+    background-color: rgb(213, 213, 213);
+}
+
+.hldiv{
+    display: flex;
+    justify-content: center;
+}
+
+.menu{
+    display: none;
+}
+
+// responsive
+
+@media screen and (max-width: 1200px) {
+    .profil{
+        display: none;
+        }
+    }
+    .pdp{
+        &:hover {
+            background: none !important;
+            .rond {
+                opacity: 0.8;
+            }
+    }
+    .droite{
+        width: 20vw;
+        padding-right: .5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .headall{
+        display: none;
+    }
+    .menu{
+        display: flex;
+        z-index: 100;
+    }
+    .menu *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .boutonmenu{
+        border: none;
+        background-color: transparent;
+        position:fixed;
+        top: 20px;
+        right: 20px;
+        display: block;
+        font-size: 3rem;
+        transform: rotate(90deg);
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            background-color: #e6e6e6;
+        }
+        &:active{
+            background-color: #cccccc;
+            scale: 0.9;
+        }
+        &:focus{
+            rotate: 90deg;
+            transition: all 0.5s ease-in-out;
+        }
+
+    }
+
+    .menomliste{
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50vw;
+        height: 50vh;
+    }
+
+    li{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .ecransortie{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.228);
+        z-index: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    .navlinklogot{
+        text-decoration: none;
+        display:flex;
+        height: 5vh;
+        width: 70vw;
+        justify-content: center;
+    }
+
+    .logot{
+        color: #f4f4f4;
+        height: 100%;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            color: #cdcdcd;
+            background: transparent !important;
+        }
+    }
+    
+    li > p{
+            display: flex;
+            justify-content: flex-start;
+            color: rgb(239, 239, 239);
+            width: 95%;
+            &:hover {
+                color: rgb(57, 57, 57);
+            }
+    }
+
+    .pdp2{
+        width: 20vw;
+        display: flex;
+        justify-content: end;
+        align-items: start;
+        margin-top: 20px;
+        margin-right: 30px;
+    }
+
+    .rond2{
+        background: url("../../../imgft/pika.jpg") no-repeat center;
+        background-position: 70% 100%;
+        background-size: 180%;
+        position: relative;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        &:hover{
+                opacity: 0.8;
+        }
+    }
+    
+    .sectionmenu {
+        box-shadow: 0 0 10px black;
+        position: fixed;
+        right: -80vw;
+        top: 0;
+        width: 70vw;
+        height: 100vh;
+        transition: all 0.5s ease-in-out;
+        background: linear-gradient(20deg, rgb(57, 57, 57) 0%, rgb(88, 88, 88) 100%,);
+    }
+    
+    @keyframes slide {
+        0% {
+            left: 120vw;
+        }
+        100% {
+            left: inherit;
+        }
+    }
+
+    .div1{
+        display:flex;
+    }
+
+    .div2{
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+}
